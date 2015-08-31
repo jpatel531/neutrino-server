@@ -1,0 +1,61 @@
+{
+  "steps": [
+    {
+      "commit": "799fd4fa95d5e67918a3ee8ee045cd67f9c1bfeb",
+      "instruction": "Do the simplest thing possible to make sure the :divisible_by_three? method passes.",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\nend",
+      "source": ""
+    },
+    {
+      "commit": "5e5d5e59f1c28c2fa059cf3b91506fb033c7f690",
+      "instruction": "Now make sure the :divisible_by_three? method works for any number",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\ttrue\nend"
+    },
+    {
+      "commit": "b14c0fd55c5597c2ad60179a8ff9ebb9dbd5e2a6",
+      "instruction": "Now do the same for :divisible_by_five?",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend"
+    },
+    {
+      "commit": "7072c5050c6aae63895ba537598feb0ddda8d19e",
+      "instruction": "And again",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\ttrue\nend"
+    },
+    {
+      "commit": "baf3fc47d500f1725055e984f938f187d00e9dab",
+      "instruction": "etc.",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 15' do \n\t\texpect(divisible_by_fifteen? 15).to be true\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\tnumber % 5 == 0\nend"
+    },
+    {
+      "commit": "8b96f6522bbdaee28d31c23c4b9a3c2afedab54c",
+      "instruction": "Pass this test!",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 15' do \n\t\texpect(divisible_by_fifteen? 15).to be true\n\tend\n\n\tit 'fizzes when a number is divisible by 3' do \n\t\texpect(fizzbuzz 3).to eq \"Fizz\"\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\tnumber % 5 == 0\nend\n\ndef divisible_by_fifteen? number\n\tnumber % 15 == 0\nend\n\ndef fizzbuzz number\n\t\"Fizz\" if divisible_by_three? number\nend"
+    },
+    {
+      "commit": "d9db404f44f17a2178a6fdfb29153f0c475724d4",
+      "instruction": "Pass this test!",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 15' do \n\t\texpect(divisible_by_fifteen? 15).to be true\n\tend\n\n\tit 'fizzes when a number is divisible by 3' do \n\t\texpect(fizzbuzz 3).to eq \"Fizz\"\n\tend\n\n\tit 'buzzes when a number is divisible by 5' do \n\t\texpect(fizzbuzz 5).to eq \"Buzz\"\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\tnumber % 5 == 0\nend\n\ndef divisible_by_fifteen? number\n\tnumber % 15 == 0\nend\n\ndef fizzbuzz number\n\treturn \"Buzz\" if divisible_by_five? number\n\treturn \"Fizz\" if divisible_by_three? number\nend"
+    },
+    {
+      "commit": "9eae624da50fa32d8a6f08cf415218815f68b17d",
+      "instruction": "Pass this test!",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 15' do \n\t\texpect(divisible_by_fifteen? 15).to be true\n\tend\n\n\tit 'fizzes when a number is divisible by 3' do \n\t\texpect(fizzbuzz 3).to eq \"Fizz\"\n\tend\n\n\tit 'buzzes when a number is divisible by 5' do \n\t\texpect(fizzbuzz 5).to eq \"Buzz\"\n\tend\n\n\tit 'fizzbuzzes when a number is divisible by 15' do \n\t\texpect(fizzbuzz 15).to eq \"FizzBuzz\"\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\tnumber % 5 == 0\nend\n\ndef divisible_by_fifteen? number\n\tnumber % 15 == 0\nend\n\ndef fizzbuzz number\n\treturn \"FizzBuzz\" if divisible_by_fifteen? number\n\treturn \"Buzz\" if divisible_by_five? number\n\treturn \"Fizz\" if divisible_by_three? number\nend"
+    },
+    {
+      "commit": "0c44caf9e4223dc3b31c49e5b1cdf80a27e49a71",
+      "instruction": "Almost there!",
+      "spec": "require 'fizzbuzz'\n\ndescribe 'Fizzbuzz' do \n\n\tit 'knows when a number is divisible by 3' do \n\t\texpect(divisible_by_three? 3).to be true\n\tend\n\n\tit 'knows when a number is not divisible by 3' do \n\t\texpect(divisible_by_three? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 5' do \n\t\texpect(divisible_by_five? 5).to be true\n\tend\n\n\tit 'knows when a number is indivisible by 5' do \n\t\texpect(divisible_by_five? 1).to be false\n\tend\n\n\tit 'knows when a number is divisible by 15' do \n\t\texpect(divisible_by_fifteen? 15).to be true\n\tend\n\n\tit 'fizzes when a number is divisible by 3' do \n\t\texpect(fizzbuzz 3).to eq \"Fizz\"\n\tend\n\n\tit 'buzzes when a number is divisible by 5' do \n\t\texpect(fizzbuzz 5).to eq \"Buzz\"\n\tend\n\n\tit 'fizzbuzzes when a number is divisible by 15' do \n\t\texpect(fizzbuzz 15).to eq \"FizzBuzz\"\n\tend\n\n\tit 'returns the number when divisible by neither 3 or 5' do \n\t\texpect(fizzbuzz 1).to eq 1\n\tend\n\nend",
+      "source": "def divisible_by_three? number\n\tnumber % 3 == 0\nend\n\ndef divisible_by_five? number\n\tnumber % 5 == 0\nend\n\ndef divisible_by_fifteen? number\n\tnumber % 15 == 0\nend\n\ndef fizzbuzz number\n\treturn \"FizzBuzz\" if divisible_by_fifteen? number\n\treturn \"Buzz\" if divisible_by_five? number\n\treturn \"Fizz\" if divisible_by_three? number\nend"
+    }
+  ],
+  "id": "1",
+  "title": "FizzBuzz",
+  "language": "source.ruby"
+}
